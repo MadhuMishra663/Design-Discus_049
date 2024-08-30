@@ -37,4 +37,39 @@ const resetPassword = (name, link) => {
   return { html, without_html };
 };
 
-module.exports = { otpTemplate, resetPassword };
+
+const instructorRegistration = (name, email, password, loginLink) => {
+    const encodedLink = encodeURIComponent(loginLink);
+    const loginUrl = `http://localhost:5173/login?redirect=${encodedLink}`;
+  
+    const html = `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+                  <h2 style="color: #333;">Hi ${name},</h2>
+                  <p style="color: #555;">
+                      Welcome! Your Instructor Account has been created successfully. Here are your login details:
+                  </p>
+                  <p style="color: #555;">
+                      <strong>Email:</strong> ${email}<br>
+                      <strong>Password:</strong> ${password}
+                  </p>
+                  <p style="color: #555;">
+                      Click the button below to log in to your account:
+                  </p>
+                  <a href="${loginUrl}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                      Log In
+                  </a>
+              </div>`;
+  
+    const without_html = `
+              Hi ${name},
+              Welcome! Your Instructor Account has been created successfully. Here are your login details:
+              Email: ${email}
+              Password: ${password}
+  
+              Click the link below to log in to your account:
+              ${loginUrl}
+          `;
+  
+    return { html, without_html };
+  };
+
+module.exports = { otpTemplate, resetPassword, instructorRegistration};

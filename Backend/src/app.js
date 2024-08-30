@@ -4,6 +4,7 @@ const { Dbconnect } = require("./config/DB");
 const { UserRouter } = require("./Router/UserRouter");
 const cookieParser = require('cookie-parser');
 const { AdminRoute, AdminRouter } = require("./Router/AdminRouter");
+const { InstructorRouter } = require("./Router/InstructorRouter");
 
 //const { logger } = require("./logs/log");
 require("dotenv").config();
@@ -21,7 +22,8 @@ app.use(cookieParser());
 app.use('/user',UserRouter)
 //Admin Router
 app.use('/admin',AdminRouter)
-
+//Instrauctor Router
+app.use('/instructor',InstructorRouter)
 
 app.get("/",(req,res)=>{
     //logger.error('GET request received at /');

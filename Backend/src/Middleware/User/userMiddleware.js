@@ -7,7 +7,7 @@ const { create_token, verify_token } = require("../../controller/JWT");
 const { otpTemplate, resetPassword } = require("../../Utils/Email_templates");
 const { create_link_reset_password, verify_link_reset_password } = require("../../controller/ResetPassword");
 const ForgetPassword = require("../../Models/Password_Reset");
-
+require("dotenv").config();
 
 
 //Middleware for REGISTRATION ROUTES
@@ -157,11 +157,11 @@ const Registration_precheck_OTP = (req, res, next) => {
 const validate_user = async (req, res, next) => {
   const { email, password } = req.userLoginData;
   try {
-    const user = await UserModel.findOne({ email: email });
+    const user = await UserModel.findOne({ email: email,role:'student' });
     if (!user) {
       return res
         .status(400)
-        .json({ status: 0, message: "Email is not registered with us." });
+        .json({ status: 0, message: "Email is not registered with us or This is not valid email ID for student" });
     }
     
     const isMatch = await bcrypt.compare(password, user.password);
@@ -171,7 +171,7 @@ const validate_user = async (req, res, next) => {
         .json({ status: 0, message: "Incorrect password." });
     }
 
-    const token = create_token({ u_id: user._id });
+    const token = create_token({ u_id: user._id },'60m');
     res.cookie("auth_token", token, {
       httpOnly: true,
       secure: false,
@@ -187,6 +187,29 @@ const validate_user = async (req, res, next) => {
       .json({ status: 0, message: error.message, data: [] });
   }
 };
+
+const check_login_or_not_student = async(req,res,next) =>{
+  const auth_token = req.cookies.auth_token;
+  if (!auth_token) {
+      return res.status(401).json({ status: 0, message: 'No session token found.' });
+  }
+  try {
+      const decoded = await verify_token(auth_token, process.env.JWT_PRIVATE_KEY);
+      if(!decoded.status){
+          return res.json({ status: 0, message: 'session is not active', data: [{...decoded}] });
+      } 
+      req.student = {student_id:decoded.decode.u_id}
+      const isMatch =await UserModel.findOne({_id:req.student.student_id,role:'student'});
+      if(!isMatch){
+        return res.json({ status: 0, message: 'session is not active' });
+      }
+      req.role = isMatch.role;
+      next();
+  } catch (error) {
+    console.log(error)
+      return res.status(401).json({ status: 0, message: "Session Expired" });
+  }
+}
 
 
 //Middleware for FORGET PASSWORD REQUEST ROUTES
@@ -325,5 +348,6 @@ module.exports = {
   send_reset_password_link,
   verify_password_link,
   forget_v_link_precheck,
-  update_password
+  update_password,
+  check_login_or_not_student
 };

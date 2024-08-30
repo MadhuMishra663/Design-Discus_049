@@ -57,7 +57,7 @@ const check_assigend_instructor = async(req,res,next) =>{
     const {instructor} = req.courseData;
     //console.log(instructor)
     try {
-        const match = await UserModel.findOne({_id:instructor,role:'admin'})
+        const match = await UserModel.findOne({_id:instructor,role:'instructor'})
         if(!match){
             return res.json({status:0,message:"Provided instructor id is not valid"});
         }
