@@ -25,7 +25,18 @@ const UserSchema = new Schema({
         enum: ['student', 'instructor', 'admin'],
         required: true,
         default: 'student'
-    }
+    },
+    tokens: [{ 
+        accessToken: {
+            type: String
+        },
+        refreshToken: {
+            type: String
+        },
+        scope: {
+            type: [String] 
+        }
+    }]
 }, { timestamps: true });
 
 UserSchema.pre("save", async function (next) {
