@@ -7,6 +7,16 @@ const SessionSchema = new Schema({
         type: String,
         required: true
     },
+    course_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'course',
+        required: true
+    },
+    batch_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Batch',
+        required: true
+    },
     startTime: {
         type: Date,
         required: true
@@ -25,14 +35,16 @@ SessionSchema.pre('save', function(next) {
     next();
 });
 
-SessionSchema.methods.toIST = function() {
-    const istOffset = 5.5 * 60 * 60 * 1000;
-    return {
-        title: this.title,
-        startTime: new Date(this.startTime.getTime() + istOffset).toISOString(),
-        endTime: new Date(this.endTime.getTime() + istOffset).toISOString()
-    };
-};
+// SessionSchema.methods.toIST = function() {
+//     const startTimeIST = new Date(this.startTime).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+//     const endTimeIST = new Date(this.endTime).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+//     return {
+//         title: this.title,
+//         startTime: startTimeIST,
+//         endTime: endTimeIST
+//     };
+// };
+
 
 const SessionModel = mongoose.model('Session', SessionSchema);
 

@@ -14,7 +14,12 @@ const dummy_texter_routes = (req,res) =>{
 
 const AdminRouter = Router();
 
-AdminRouter.post('/login',validate_login,validate_Admin,check_roles(['admin']),create_cookies)
+AdminRouter.post('/login',
+    validate_login,
+    validate_Admin,
+    check_roles(['admin']),
+    create_cookies
+)
 
 
 

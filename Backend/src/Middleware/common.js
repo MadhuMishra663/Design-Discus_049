@@ -22,7 +22,7 @@ const validate_login = (req, res, next) => {
 
 const check_roles = ( roles) => {
     return (req, res, next) => {
-        if (!roles.includes(req.userLoginData.role)) {
+        if (!roles.includes(req.role)) {
             return res.status(403).json({ status: 0, message: "You're not authorized for this action" });
         } else {
             next();
