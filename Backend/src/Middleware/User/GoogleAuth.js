@@ -1,11 +1,12 @@
 const { google } = require('googleapis');
 const { UserModel } = require('../../Models/User');
 const OAuth2 = google.auth.OAuth2;
+require("dotenv").config;
 
 
 const oauth2Client = new OAuth2(
-    '853312933143-ditq58vq7rrti9ndvl75pjs127s2lmsr.apps.googleusercontent.com',
-    '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',
+    process.env.GOOGLE_CALENDER_API_KEY,
+    process.env.GOOGLE_CALENDER_SECRET_KEY,
     'http://localhost:9090/user/oauth2callback'
 );
 
