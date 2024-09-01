@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const cors=require('cors');
 const mailSender = require('./utils/mailSender.js')
-mailSender("kumar.rajesh5656@gmail.com", "otp", "895");
+mailSender("adityasinghuo@gmail.com", "otp", "895");
 
 // packages
 const fileUpload = require('express-fileupload');
