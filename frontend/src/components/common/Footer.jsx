@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ImGithub, ImLinkedin2 } from "react-icons/im";
 
 // Images
-import KnowledgeKnook from "../../assets/Logo/Knowledge-Knook.png";
+import hivelogo2 from "../../assets/Images/hive logo 2.jpg";
 
 // footer data
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
             <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
               <img
-                src={KnowledgeKnook}
+                src={hivelogo2}
                 alt=""
                 className="object-contain w-24 h-24 rounded-full"
               />

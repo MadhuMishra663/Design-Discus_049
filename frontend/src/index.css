@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-background: #000;
+  --color-text: #fff;
+}
 
+[data-theme="light"] {
+  --color-background: #fff;
+  --color-text: #000;
+}
 
+[data-theme="dark"] {
+  --color-background: #000;
+  --color-text: #fff;
+}
 html,
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 * {
