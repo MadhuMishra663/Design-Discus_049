@@ -86,10 +86,6 @@ The Hive platform's API is designed following the REST architectural style. The 
 
 ## 🖥️ Screen Preview :
 
-### Home Page Background 🏠
-
-<img width='100%' src='./frontend/src/assets/Images/banner1.png' />
-
 ### About Page
 
 <img width='100%' src='./frontend/src/assets/Images/About_img.png' />
@@ -102,9 +98,7 @@ The Hive platform's API is designed following the REST architectural style. The 
 
 <img width='100%' src='./frontend/src/assets/Images/AI content.png' /> -->
 
-### Footer
 
-<img width='100%' src='./frontend/src/assets/Images/footer_image.png' />
 
 ### 404 Page
 
