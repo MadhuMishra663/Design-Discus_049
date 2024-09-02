@@ -4,27 +4,16 @@ Knowledge Knook is a fully functional edu-tech platform that enables users to cr
 <br/>
 This platform is built using the **MERN stack**, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
 
-<h2>Live link 🌍📡 - <a href="https://lg-legends-053-nem-104.vercel.app/">Visit Site</a></h2>
+<h2>Live link 🌍📡 - <a href="https://design-discus-049.vercel.app/">Visit Site</a></h2>
 
 <img width='100%' src='./frontend/src/assets/Images/banner1.png' />
 
-| Section                                        | Description                            |
-| ---------------------------------------------- | -------------------------------------- |
-| [Knowledge Knook](#knowledge-knook-goals-📚)   | 📚 Overview of Knowledge Knook goals   |
-| [Tech Stack](#tech-stack-)                     | 💻🔧 Technologies used in the project  |
-| [System Architecture](#system-architecture-)   | 🏰 Overview of the system architecture |
-| [Architecture Diagram](#architecture-diagram-) | 🏗️ Diagram explaining the architecture |
-| [Schema](#schema-)                             | 🗂 Explanation of data schemas used     |
-| [React Hooks](#react-hooks-)                   | 🎣 Overview of React Hooks used        |
-| [React Library](#react-library-)               | ⚛️📚 Overview of React Libraries used  |
-| [Screen Preview](#screen-preview-)             | 🖥️ Screen Preview                      |
 
-## Knowledge Knook Goals 📚
+## Hive Goals 📚
 
-1️⃣ A seamless and interactive learning experience for students, making education more accessible and engaging.<br/>
-2️⃣ A platform for instructors to showcase their expertise and connect with learners across the globe.<br/>
+1️⃣ Centralize and streamline access to educational content for efficient learning and teaching.<br/>
+2️⃣ Enhance communication and collaboration between students and instructors.<br/>
 
-<img width='100%' src='./frontend/src/assets/Images/gif.gif' />
 
 ## Tech Stack 💻🔧
 
@@ -41,19 +30,11 @@ This platform is built using the **MERN stack**, which includes ReactJS, NodeJS,
 <code title="Nodejs"><img height="50" src="https://github.com/BoddepallyVenkatesh06/LearnHub-E-Learning-Platform/blob/main/screenshots/nodejs-logo.png"></code>
 <code title="Express"><img height="70" src="https://github.com/BoddepallyVenkatesh06/LearnHub-E-Learning-Platform/blob/main/screenshots/express%20logo.png"></code>
 
-### Database 🛢️ :
 
-<code title="Mongodb"><img height="40" src="https://github.com/BoddepallyVenkatesh06/LearnHub-E-Learning-Platform/blob/main/screenshots/mongodb%20logo.png"></code>
-
-### Cloudinary Integration ☁️
-
-<code title="Cloudinary"><img height="40" src="https://github.com/BoddepallyVenkatesh06/LearnHub-E-Learning-Platform/blob/main/screenshots/cloudinary-logo.jpg"></code>
-
-<hr/>
 
 ## System Architecture 🏰
 
-☝ Knowledge Knook edu-tech platform and consists of three main components:  
+☝ Hive edu-tech platform and consists of three main components:  
 The front end, the back end, and the database. The platform follows a client-server architecture, with the front end serving as the client and the back end and database serving as the server.
 
 ### 🎨 Front-end
@@ -70,14 +51,14 @@ The database for the platform is built using MongoDB, which is a NoSQL database 
 
 ## Architecture Diagram 🏗️
 
-Here is a high-level diagram that illustrates the architecture of the Knowledge Knook edu-tech platform:
+Here is a high-level diagram that illustrates the architecture of the Hive edu-tech platform:
 <img width='60%' src='./frontend/src/assets/Images/Architecture Diagram.png' />
 
 <hr/>
 
 ## API Design
 
-The Knowledge Knook platform's API is designed following the REST architectural style. The API is implemented using Node.js and Express.js. It uses JSON for data exchange and follows standard HTTP request methods such as GET, POST, PUT, and DELETE. Here is a sample list of API endpoints and their functionalities:
+The Hive platform's API is designed following the REST architectural style. The API is implemented using Node.js and Express.js. It uses JSON for data exchange and follows standard HTTP request methods such as GET, POST, PUT, and DELETE. Here is a sample list of API endpoints and their functionalities:
 
 1. `/api/auth/signup` (POST) - Create a new user (student or instructor) account.
 2. `/api/auth/login` (POST) – Log in using existing credentials and generate a JWT token.
