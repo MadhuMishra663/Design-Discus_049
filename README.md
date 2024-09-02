@@ -6,7 +6,7 @@ This platform is built using the **MERN stack**, which includes ReactJS, NodeJS,
 
 <h2>Live link 🌍📡 - <a href="https://design-discus-049.vercel.app/">Visit Site</a></h2>
 
-<img width='100%' src='./frontend/src/assets/Images/banner2.png' />
+
 
 
 ## Hive Goals 📚
